@@ -1,0 +1,9 @@
+<div id="wrapper">
+  <div id="question">{{section.question}}</div>
+  <div
+    id="answer"
+    [ngClass]="(section.answer === 'Yes') ? 'yes' : 'no'"
+  >
+    {{section.answer}}
+  </div>
+</div>

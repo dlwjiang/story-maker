@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { StoryManagerService } from "./story-manager.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.less"]
 })
 export class AppComponent {
-  title = 'story-maker';
+
+  title = "story-maker";
+  story: object[];
+  @ViewChild("input") input;
+
+  constructor(private storyManagerService: StoryManagerService) {}
+
+  ngOnInit(): void {
+    this.story = this.storyManagerService.getStory();
+  }
+
+  addSection(question: string): void {
+    this.storyManagerService.addSection(question);
+    this.input.nativeElement.value = null;
+  }
 }
