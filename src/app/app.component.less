@@ -21,6 +21,18 @@
     width: 90%;
     height: 30px;
     border-radius: 5px;
+    padding: 1px 4px;
+    &:focus {
+     outline: none;
+    }
+  }
+  .yes {
+    color: rgb(20, 143, 20);
+    font-weight: 400;
+  }
+  .no {
+    color: rgb(211, 28, 28);
+    font-weight: 400;
   }
   h1 {
     color: steelblue;
@@ -34,17 +46,17 @@
   #left {
     display: inline-block;
     padding: 10px 20px;
-    width: 40%;
+    width: 45%;
   }
   #right {
     display: inline-block;
     box-sizing: border-box;
-    width: 60%;
+    width: 55%;
     padding: 10px;
     background-color: #dfe4ff24;
     height: 100vh;
     overflow-y: scroll;
-    border-left: 1px solid steelblue;
+    border-left: 1px solid #d6d6d6;
   }
 
 }

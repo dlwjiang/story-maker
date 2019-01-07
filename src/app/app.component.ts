@@ -7,10 +7,10 @@ import { StoryManagerService } from "./story-manager.service";
   styleUrls: ["./app.component.less"]
 })
 export class AppComponent {
-
   title = "story-maker";
   story: object[];
   @ViewChild("input") input;
+  @ViewChild("right") right;
 
   constructor(private storyManagerService: StoryManagerService) {}
 
@@ -21,5 +21,11 @@ export class AppComponent {
   addSection(question: string): void {
     this.storyManagerService.addSection(question);
     this.input.nativeElement.value = null;
+    setTimeout(this.scrollToBottom.bind(this), 0);
+  }
+
+  scrollToBottom(): void {
+    const rightSection = this.right.nativeElement;
+    rightSection.scrollTop = rightSection.scrollHeight - rightSection.clientHeight;
   }
 }

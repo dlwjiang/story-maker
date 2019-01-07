@@ -6,18 +6,19 @@
       <div id="reset" (click)="storyManagerService.clearStory()">Reset</div>
     </h1>
     <h2>
-      Type in a question that can be answered with Yes or No.
-      Storymaker answers pseudo-randomly to help you "give birth" to the story in your mind.
-      Let loose and type in the first thing that comes to your mind.
+      Type in a question that can be answered with <span class="yes">Yes</span> or <span class="no">No</span>.
+      Work together with Storymaker to create a story together.
+      Let your mind run free and type in the first thing that comes to mind.
     </h2>
     <input
       type="text"
       #input
       (keyup.enter)="addSection(input.value)"
+      placeholder="ENTER to submit"
     >
   </div>
 
-  <div id="right">
+  <div id="right" #right>
     <story-section
       *ngFor="let section of story"
       [section]="section"
