@@ -1,0 +1,9 @@
+# [START runtime]
+runtime: nodejs8
+handlers:
+- url: /
+  static_files: dist/story-maker/index.html
+  upload: dist/story-maker/index.html
+- url: /
+  static_dir: dist/story-maker
+# [END runtime]

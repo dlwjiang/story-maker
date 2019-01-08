@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ["./section.component.less"]
 })
 export class SectionComponent implements OnInit {
-  @Input() section: object;
+  @Input() section: any;
 
   constructor() {}
 

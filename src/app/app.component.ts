@@ -12,7 +12,7 @@ export class AppComponent {
   @ViewChild("input") input;
   @ViewChild("right") right;
 
-  constructor(private storyManagerService: StoryManagerService) {}
+  constructor(public storyManagerService: StoryManagerService) {}
 
   ngOnInit(): void {
     this.story = this.storyManagerService.getStory();
