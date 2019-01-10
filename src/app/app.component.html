@@ -3,7 +3,7 @@
   <div id="left">
     <h1>
       Storymaker
-      <div id="reset" (click)="storyManagerService.clearStory()">Reset</div>
+      <div class="btn" (click)="reset()">Reset</div>
     </h1>
     <h2>
       Type in a question that can be answered with <span class="yes">Yes</span> or <span class="no">No</span>.
@@ -20,9 +20,23 @@
 
   <div id="right" #right>
     <story-section
-      *ngFor="let section of story"
-      [section]="section"
+    *ngFor="let section of story"
+    [section]="section"
     ></story-section>
+    <div id="cleaned-story">
+      <div
+        *ngIf="!storyIsFinished && story.length >= 8"
+        (click)="finishStory()"
+        class="btn"
+      >
+        Wrap up the Story
+      </div>
+      <div *ngIf="storyIsFinished">
+        <span *ngFor="let section of cleanedStory()">
+          {{section.question}}
+        </span>
+      </div>
+    </div>
   </div>
 
 </div>
